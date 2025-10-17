@@ -1,4 +1,4 @@
-import { Solve } from '@/interfaces/Solve';
+import { Solve } from "@/interfaces/Solve";
 
 /**
  * Calculates the mean (average) of solve times.
@@ -11,7 +11,7 @@ export default function getMean(solves: Solve[] | any): number {
   }
 
   // Filter out DNF solves
-  const validSolves = solves.filter(solve => solve && !solve.dnf);
+  const validSolves = solves.filter((solve) => solve && !solve.dnf);
   const n = validSolves.length;
 
   // If there are no valid solves, the mean is 0 (representing DNF).
