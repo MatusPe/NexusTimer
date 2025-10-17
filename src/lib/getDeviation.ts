@@ -1,4 +1,4 @@
-import { Solve } from '@/interfaces/Solve';
+import { Solve } from "@/interfaces/Solve";
 
 /**
  * Calculates the standard deviation of solved times.
@@ -6,7 +6,7 @@ import { Solve } from '@/interfaces/Solve';
  * @returns {number} The standard deviation of solved times. Returns 0 if there are less than 2 solves.
  */
 export default function getDeviation(solves: Solve[]): number {
-  if (!solves) {
+  if (!Array.isArray(solves)) {
     return 0;
   }
 

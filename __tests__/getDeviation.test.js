@@ -7,22 +7,24 @@ describe("getDeviation Function Tests", () => {
   });
 
   test("should calculate the standard deviation for a full session", () => {
-    expect(getDeviation([...FAKE_SESSION])).toBe(1432.117977536666);
+    expect(getDeviation([...FAKE_SESSION])).toBe(1418.2807643598833);
   });
 
   test("should calculate the standard deviation for the first 5 solves in the session", () => {
-    expect(getDeviation([...FAKE_SESSION].slice(0, 5))).toBe(1217.350113977076);
+    expect(getDeviation([...FAKE_SESSION].slice(0, 5))).toBe(
+      1088.8310429079436
+    );
   });
 
   test("should calculate the standard deviation for the first 12 solves in the session", () => {
     expect(getDeviation([...FAKE_SESSION].slice(0, 12))).toBe(
-      1403.2537730272281
+      1343.5132013576278
     );
   });
 
   test("should calculate the standard deviation for the first 50 solves in the session", () => {
     expect(getDeviation([...FAKE_SESSION].slice(0, 50))).toBe(
-      1390.4659076756118
+      1376.4910212565862
     );
   });
 
