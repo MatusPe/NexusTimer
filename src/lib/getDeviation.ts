@@ -6,10 +6,10 @@ import { Solve } from '@/interfaces/Solve';
  * @returns {number} The standard deviation of solved times. Returns 0 if there are less than 2 solves.
  */
 export default function getDeviation(solves: Solve[]): number {
-  if (!solves) {
+
+  if (!Array.isArray(solves)) {
     return 0;
   }
-
   const allSolves = [...solves];
 
   // If there are less than 2 solves, the standard deviation is 0.
