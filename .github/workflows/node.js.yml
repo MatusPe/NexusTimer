@@ -47,7 +47,7 @@ jobs:
         run: pnpm install
 
       - name: Run tests with coverage
-        run: pnpm run test:coverage
+        run: pnpm exec jest --coverage
 
       - name: Run security audit
         run: pnpm audit --audit-level=moderate
