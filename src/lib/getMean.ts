@@ -5,13 +5,13 @@ import { Solve } from '@/interfaces/Solve';
  * @param {Solve[]} solves - An array of Solve objects.
  * @returns {number} The mean of solve times. Returns 0 if there are no solves.
  */
-export default function getMean(solves: Solve[]): number {
-  if (!solves) {
-    return 0;
+export default function getMean(solves: Solve[] | any): number {
+  if (!Array.isArray(solves)) {
+    return 0; // Return 0 if solves is not an array
   }
 
   // Filter out DNF solves
-  const validSolves = solves.filter(solve => !solve.dnf);
+  const validSolves = solves.filter((solve) => solve && !solve.dnf);
   const n = validSolves.length;
 
   // If there are no valid solves, the mean is 0 (representing DNF).
